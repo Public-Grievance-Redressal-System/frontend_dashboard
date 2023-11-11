@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+    <!-- Css Link -->
+     <link rel="stylesheet" href="./main.css">
+     <!-- Icons Library link -->
+     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+  
+<body class="flex">
+
+  <div class="main">
+      
+
+<div class="sideMenu ">
+
+  <div class="logoDiv flex">
+    <!-- <div class="logoImage">
+      <img src="./assets/images/hamburger.png" alt="Logo Image">
+    </div> -->
+    <h1 class="logoText">
+        Grievance Management
+    </h1>
+  </div>
+
+  <div class="menuList">
+    <ul>
+      <a href="dashboard.html">
+        <li class="list">
+          <i class="uil uil-analytics icon"></i>
+          <span class="listName">Dashboard</span>
+        </li>
+       </a>
+
+     <a href="grievance.html">
+      <li class="list ">
+        <i class="uil uil-pizza-slice icon"></i>
+        <span class="listName">Grievances</span>
+      </li>
+     </a>
+     
+     <a href="create_grievance.html">
+      <li class="list">
+        <i class="uil uil-setting icon"></i>
+        <span class="listName">Post Grievance</span>
+      </li>
+     </a>
+
+    </ul>
+  </div>
+</div>
+
+
+      <div class="mainContent">
+        <div class="topSection flex">
+          <div class="seacrchBox flex">
+            <i class="uil uil-search icon"></i>
+            <input type="text" placeholder=" Search...">
+            <i class="uil uil-microphone icon"></i>
+          </div>
+
+          <div class="userBox flex">
+            <a href="index.html">
+              <div class="adminImage">
+                <img src="./assets/images/pp.jpg" alt="Admin Image">
+              </div>
+            </a>
+          <div class="userName">
+            <span id="user_role">ADMIN</span>
+          <small id="user_name">admin</small>
+          </div>
+          <a href="index.html" onclick="logout()"><i class="uil uil-signout"></i></a>
+          </div>
+        </div>
+
+        <div class="body">
+          <div class="overViewDiv">
+           <div class="intro flex" >
+             <h3 class="title">Overview</h3>
+             <div class="flex">
+              <!-- <div class="iconDiv">
+                <i class="uil uil-toggle-off icon toggleIcon"></i>
+              </div> -->
+              <!-- <select name="" id="select">
+                <option value="Today">Today</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+              </select> -->
+             </div>
+           </div>
+          </div>
+          
+          <div class="analysisDiv grid">
+                  <div class="card">
+
+                    <div class="cartTitle flex">
+                      <i class="uil uil-chart-growth icon"></i>
+                      <span>Total Grievances</span>
+                      <h1>40</h1>
+                    </div>
+
+                    <div class="cardBody">
+                      <h2>25
+                        <span class="percentage">Resolved
+                        </span>
+                      </h2>
+                      <h2>15
+                        <span class="percentage">Open
+                        </span>
+                      </h2>
+                    </div>
+                  </div>
+                  <div class="card">
+
+                    <div class="cartTitle flex">
+                      <i class="uil uil-user-check icon"></i>
+                      <span>Total Users</span>
+                      <h1>25</h1>
+                    </div>
+
+                    <div class="cardBody">
+                      <h2>20
+                        <span class="percentage">Active Users</span>
+                      </h2>
+                    </div>
+                  </div>
+                  <div class="card active ">
+
+                    <div class="cartTitle flex">
+                      <i class="uil uil-shopping-bag icon"></i>
+                      <span>Average Resolution Time</span>
+                    </div>
+
+                    <div class="cardBody">
+                      <h2>2.5 hrs
+                        <span class="percentage negativeNumber">-2%
+                          <i class="uil uil-arrow-down icon negativeNumber"></i>
+                        </span>
+                      </h2>
+                    </div>
+                    <small>Compared to (2 yesterday !)</small>
+                  </div>
+                  <div class="card">
+
+                    <div class="cartTitle flex">
+                      <i class="uil uil-chart-growth icon"></i>
+                      <span>User Rating</span>
+                    </div>
+
+                    <div class="cardBody">
+                      <h2>4.46
+                        <span class="percentage  positiveNumber">2%
+                          <i class="uil uil-arrow-up icon positiveNumber"></i>
+                        </span>
+                      </h2>
+                    </div>
+
+                    <small>Compared to (4.2 yesterday !)</small>
+                  </div>
+                  
+          </div>
+
+           <div class="graphDiv_foodDiv_deliveryBoyDiv grid">
+             <div class="graphDiv">
+              <div class="intro flex" >
+                <h3 class="title">Overview</h3>
+                <label for="metric_type">Metric Type</label>
+                <select name="" id="metric_type">
+                  <option value="TICKETS">Tickets</option>
+                  <option value="AVG_RESOLUTION_TIME">Average Resolution Time</option>
+                </select>
+              </div>
+              <div class="intro flex-sm" >
+                <label for="startdate">Start date:</label>
+                <input type="date" id="startdate" name="startdate">
+                <label for="enddate">End date:</label>
+                <input type="date" id="enddate" name="enddate">
+                <select name="" id="range_frequency">
+                  <option value="DAILY">Daily</option>
+                  <option value="MONTHLY">Monthly</option>
+                  <option value="YEARLY">Yearly</option>
+                </select>
+                <select name="" id="ticket_status">
+                  <option value="OPEN">Open</option>
+                  <option value="RESOLVED">Resolved</option>
+                </select>
+                <select name="" id="department">
+                </select>
+                <button class="addBtn" onclick="fetchDataAndPlotChart()">Fetch</button>
+              </div>
+              <canvas id="line" width="300px" height="90px"></canvas>
+             </div>
+            
+           </div>
+
+        </div>
+      </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+  <script src="./chart.js"></script>
+  <script src="./index.js"></script>
+
+  </body>
+  </html>

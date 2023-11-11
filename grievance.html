@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+    <!-- Css Link -->
+     <link rel="stylesheet" href="./main.css">
+     <!-- Icons Library link -->
+     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+<body class="flex">
+
+  <div class="main">
+    <div class="sideMenu ">
+
+      <div class="logoDiv flex">
+        <h1 class="logoText">
+          Grievance Management.
+        </h1>
+      </div>
+    
+      <div class="menuList">
+        <ul>
+    
+          <!-- <a href="dashboard.html">
+            <li class="list">
+              <i class="uil uil-analytics icon"></i>
+              <span class="listName">Dashboard</span>
+            </li>
+           </a> -->
+    
+         <a href="grievance.html">
+          <li class="list ">
+            <i class="uil uil-pizza-slice icon"></i>
+            <span class="listName">Grievances</span>
+          </li>
+         </a>
+         
+         <a href="create_grievance.html">
+          <li class="list">
+            <i class="uil uil-setting icon"></i>
+            <span class="listName">Post Grievance</span>
+          </li>
+         </a>
+    
+        </ul>
+      </div>
+    </div>
+
+      <div class="mainContent">
+        <div class="topSection flex">
+          <div class="seacrchBox flex">
+            <i class="uil uil-search icon"></i>
+            <input type="text" placeholder=" Search...">
+            <i class="uil uil-microphone icon"></i>
+          </div>
+
+          <div class="userBox flex">
+            <a href="index.html">
+              <div class="adminImage">
+                <img src="./assets/images/pp.jpg" alt="Admin Image">
+              </div>
+            </a>
+            <div class="userName">
+              <span id="user_role">User</span>
+            <small id="user_name">user</small>
+            </div>
+            <a href="index.html" onclick="logout()"><i class="uil uil-signout"></i></a>
+            </div>
+        </div>
+
+        <div class="body">
+        <div class="overViewDiv">
+           <div class="intro flex" >
+             <h3 class="title">Grievances</h3>
+           </div>
+        </div>
+        <div class="mainItems">
+          <table id="grievance_table">
+              <tr  class="tableHeader">
+                <th>Item ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Department</th>
+                <th>Creation Date</th>
+                <th>Status</th>
+                </tr>
+          
+          </table>
+        </div>
+        </div>
+      </div>
+  </div>
+  <script src="./get_grievance.js"></script>
+  </body>
+  </html>

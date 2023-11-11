@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,16 +10,17 @@
     <link rel="stylesheet" href="./index.css">
     <!-- Icons link -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+
 </head>
 <body>
     <div class="container flex">
        
         <div class="mainContent">
             <h2 class="title">
-                Welcome to Foodie
+                Welcome to Grievance Management
             </h2>
-            <p>Here is your start of amazing experience and everlasting memeries.</p>
-
             <div class="btn">
                 <button type="button" class="loginBtn login_Btn" >LOGIN</button>
                 <button type="button" class="registerBtn register_Btn">REGISTER</button>
@@ -31,9 +32,8 @@
             <div class="introSection">
                 <div class="sectionText flex">
                     <h2 class="title">
-                        Welcome to Foodie
+                        Welcome to Grievance Management
                     </h2>
-                    <p>Here is your start of amazing experience and everlasting memeries.</p>
                 </div>
             </div>
             <div class="inputSection flex">
@@ -44,16 +44,18 @@
               <span>Login to continue</span>
               <div class="inputs">
                   <div class="emailInput">
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
                     <i class="uil uil-envelope-minus icon"></i>
                   </div>
                   <div class="passwordInput">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
                     <i class="uil uil-lock icon"></i>
                   </div>
                   
                   <div class="btn">
-                    <button type="button" class="loginBtn clearFields">LOGIN</button>
+                    <!-- <a href="./dashboard.html"> -->
+                      <button type="button" onclick="login()" class="loginBtn">LOGIN</button>
+                    <!-- </a> -->
                 </div>
 
                 <span class="tagline">Don't have an account? <a href="#" class="register_Btn">Register Now</a></span>
@@ -68,40 +70,57 @@
                 <div class="closeIcon flex">
                     <i class="uil uil-times-circle icon"></i>
                 </div>
-              <h2>Hello</h2>
               <span>Create an account</span>
               <div class="inputs">
                   <div class="userInput">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" id="create_username" placeholder="Username" required>
                     <i class="uil uil-user icon"></i>
                   </div>
                   <div class="emailInput">
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" id="create_email" placeholder="Email" required>
                     <i class="uil uil-envelope-minus icon"></i>
                   </div>
+                  <div class="emailInput">
+                    <input type="text" id="create_phone" placeholder="Phone" required>
+                    <i class="uil uil-phone icon"></i>
+                  </div>
                   <div class="passwordInput">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" id="create_password" placeholder="Password" required>
                     <i class="uil uil-lock icon"></i>
                   </div>
-                  
+                  <div class="emailInput">
+                    <input type="test" id="create_address" placeholder="Address" required>
+                    <i class="uil uil-lock icon"></i>
+                  </div>
+                  <div>
+                    <div class="roleInput">
+                      <label for="roles">Role</label>
+                      <select name="" id="create_role">
+                      </select>
+                    </div>
+                    <div class="departmentInput">
+                      <label for="department">Department</label>
+                      <select name="" id="create_department">
+                      </select>
+                    </div>
+                  </div>
                   <div class="btn">
-                    <button type="button" class="loginBtn login_Btn">REGISTER</button>
+                    <button type="button" onclick="registerUser()"  class="loginBtn login_Btn">REGISTER</button>
                 </div>
-                <div class="alternatives">
+                <!-- <div class="alternatives">
                     <span>OR</span>
                     <div>
                         <i class="uil uil-facebook icon"></i>
                         <i class="uil uil-instagram icon"></i>
                         <i class="uil uil-twitter icon"></i>
                     </div>
-                </div>
-                <span class="tagline">Already have an account? <a href="#" class="login_Btn">Login Now</a></span>
-
+                </div> -->
               </div>
             </div>
         </div>
     </div>
     
     <script src="./index.js"></script>
+    <script src="./login.js"></script>
 </body>
 </html>

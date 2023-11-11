@@ -11,6 +11,7 @@ function moveHome(){
 }
 closeIcons.forEach(closeIcon => closeIcon.addEventListener('click', moveHome))
 
+
 const loginBtns = document.querySelectorAll('.login_Btn')
 const registerBtns = document.querySelectorAll('.register_Btn')
 
@@ -30,9 +31,7 @@ registerBtns.forEach(registerBtn => {
     })
 })
 
-const clearFieldBtn = document.querySelector('.clearFields')
- clearFieldBtn.addEventListener('click', function(){
-    registerPage.style.display = 'none';
-    loginpPage.style.display = 'none';
-    mainContent.style.display = 'block';
- })
+
+
+
+
